@@ -645,7 +645,7 @@ module Pod
     #
     def run_plugins_pre_integrate_hooks
       if any_plugin_pre_integrate_hooks?
-        context = PreIntegrateHooksContext.generate(sandbox, pods_project, aggregate_targets)
+        context = PreIntegrateHooksContext.generate(sandbox, pods_project, pod_target_subprojects, aggregate_targets)
         HooksManager.run(:pre_integrate, context, plugins)
       end
     end
@@ -657,7 +657,7 @@ module Pod
       if any_plugin_post_install_hooks?
         unlock_pod_sources
 
-        context = PostInstallHooksContext.generate(sandbox, pods_project, aggregate_targets)
+        context = PostInstallHooksContext.generate(sandbox, pods_project, pod_target_subprojects, aggregate_targets)
         HooksManager.run(:post_install, context, plugins)
       end
 
@@ -668,7 +668,7 @@ module Pod
     #
     def run_plugins_post_integrate_hooks
       if any_plugin_post_integrate_hooks?
-        context = PostIntegrateHooksContext.generate(sandbox, pods_project, aggregate_targets)
+        context = PostIntegrateHooksContext.generate(sandbox, pods_project, pod_target_subprojects, aggregate_targets)
         HooksManager.run(:post_integrate, context, plugins)
       end
     end

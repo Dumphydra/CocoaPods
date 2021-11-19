@@ -16,6 +16,10 @@ To install release candidates run `[sudo] gem install cocoapods --pre`
   [Dimitris Koutsogiorgas](https://github.com/dnkoutso)
   [#11158](https://github.com/CocoaPods/CocoaPods/pull/11158)
 
+* Include subprojects in the plugin post-install hook context  
+  [Eric Amorde](https://github.com/amorde)
+  [#11224](https://github.com/CocoaPods/CocoaPods/pull/11224)
+
 ##### Bug Fixes
 
 * Clean sandbox when a pod switches from remote to local.  
